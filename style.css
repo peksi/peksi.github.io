@@ -1,0 +1,45 @@
+.container {
+  margin-top: 200px;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-weight: 900;
+}
+
+h1{
+  font-size: 70px;
+}
+
+a, a:visited, a:active, a:hover {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
+
+.social {
+  font-size: 40px;
+}
+
+body {
+  background-color: #F3D8A9;
+  text-shadow: 2px 2px 0px #9e9e9e;
+}
+
+html,
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Scale canvas with resize attribute to full size */
+canvas[resize] {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
