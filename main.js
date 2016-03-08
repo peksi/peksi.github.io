@@ -1,7 +1,25 @@
-/*  
-    Animation inspiration from:
+/***
+  Site functionality
+***/
+
+$('#portfolio-link').click(function () {
+  $('#maincontainer').hide("fade", 400, function(){
+    $('#portfoliocontainer').show("fade");
+  });
+});
+
+$('#back-link').click(function () {
+  $('#portfoliocontainer').hide("fade", 400, function(){
+    $('#maincontainer').show("fade");
+  });
+});
+
+
+/***
+    Dat funky homepage animation,
+    inspiration from:
     http://paperjs.org/tutorials/animation/creating-animations/
-*/
+***/
 
 var count = 100;
 var pause = false;
@@ -15,8 +33,8 @@ function getRandomInt(min, max) {
 
 function tri(index){
     var triangle = new Path.RegularPolygon(new Point(0, 0), 3, 50);
-    triangle.fillColor = colors[index];  
-    return triangle;  
+    triangle.fillColor = colors[index];
+    return triangle;
 }
 
 /* Place all the triangles */
@@ -28,18 +46,21 @@ for (var i = 0; i < count; i++) {
     placedSymbol.scale(i / count);
 }
 
+/* onMouseMove */
+
+
 /* Run the effect */
 
 function onFrame(event) {
     if(!pause){
         for (var i = 0; i < count; i++){
             var item = project.activeLayer.children[i];
-            // Speed 
+            // Speed
             item.position.y -= item.bounds.width / 100;
             // Loop
             if (item.bounds.bottom < 0) {
                 item.position.y = view.bounds.height + item.bounds.height;
-            }        
+            }
         }
     }
 }
@@ -66,7 +87,7 @@ function onKeyDown(event){
       ltr = coded.charAt(i)
       link += (ltr)
     }
-    else {     
+    else {
       ltr = (key.indexOf(coded.charAt(i))-shift+key.length) % key.length
       link += (key.charAt(ltr))
     }
