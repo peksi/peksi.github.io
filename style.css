@@ -65,6 +65,7 @@ a {
   transition: 0.5s;
   padding: 10px;
   font-size: 16px;
+  text-shadow: none;
 }
 
 .infodiv:hover{
